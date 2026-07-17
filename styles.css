@@ -15,6 +15,7 @@ body {
   padding: 40px;
   background: #e5e7eb;
   display: flex;
+  font-size: 10pt;
 }
 
 h1 {
@@ -26,9 +27,23 @@ h1 {
   width: 210mm;
   min-height: 297mm;
   background: white;
-  padding: 20mm;
+  padding: 10mm;
   box-sizing: border-box;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+/* ----- contact-bar ----- */
+.contact-bar {
+  background: grey;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 10px;
+  column-gap: 20px;
+}
+
+.contact-item svg {
+  width: 1em;
+  height: 1em;
 }
 
 /* ===== PRINT ===== */
