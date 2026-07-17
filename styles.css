@@ -1,3 +1,78 @@
+/* =======================================================
+   DESIGN TOKENS
+======================================================= */
+:root {
+  /* ===== FONT FAMILY ===== */
+  --font-heading: "Archivo Black", sans-serif;
+  --font-body: "Roboto", sans-serif;
+
+  /* ===== FONT SIZE ===== */
+  /* Name */
+  --fs-name: 2rem; /* 32px */
+  /* Section */
+  --fs-section-title: 1rem; /* 16px */
+  /* Job Title */
+  --fs-job-title: 0.875rem; /* 14px */
+  /* Body */
+  --fs-body: 0.875rem; /* 14px */
+  /* Small */
+  --fs-small: 0.75rem; /* 12px */
+
+  /* ===== FONT WEIGHT ===== */
+  --fw-black: 900;
+  --fw-bold: 700;
+  --fw-semibold: 600;
+  --fw-medium: 500;
+  --fw-regular: 400;
+
+  /* ===== LINE HEIGHT ===== */
+  --lh-tight: 1.2;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.7;
+
+  /* ===== LETTER SPACING ===== */
+  --ls-tight: -0.02em;
+  --ls-normal: 0;
+  --ls-wide: 0.05em;
+
+  /* ===== COLORS ===== */
+  --clr-heading: #111827;
+  --clr-text: #374151;
+  --clr-muted: #6b7280;
+  --clr-border: #d1d5db;
+  --clr-background: #ffffff;
+  --clr-surface: #f3f4f6;
+  --clr-card: #f3f4f6;
+
+  /* ===== SPACING ===== */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+
+  /* ===== BORDER RADIUS ===== */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* ===== ICON SIZES ===== */
+  --icon-sm: 14px;
+  --icon-md: 16px;
+  --icon-lg: 20px;
+
+  /* ===== A4 PAGE ===== */
+  --page-width: 210mm;
+  --page-height: 297mm;
+  --page-padding: 10mm;
+}
+
+/* =======================================================
+   RESET
+======================================================= */
 *,
 *::before,
 *::after {
@@ -6,44 +81,136 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-normal);
+  color: var(--clr-text);
+  background: var(--clr-background);
   margin: 0;
   padding: 40px;
-  background: #e5e7eb;
   display: flex;
-  font-size: 10pt;
+  justify-content: center;
+  background: var(--clr-surface);
 }
 
-h1 {
-  font-family: "Archivo Black", sans-serif;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-/* ----- pages ----- */
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* =======================================================
+   TYPOGRAPHY
+======================================================= */
+
+.cv-name {
+  font-family: var(--font-heading);
+  font-size: var(--fs-name);
+  font-weight: var(--fw-black);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-wide);
+  color: var(--clr-heading);
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-section-title);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-wide);
+  color: var(--clr-heading);
+  text-transform: uppercase;
+}
+
+.job-title {
+  font-size: var(--fs-job-title);
+  font-weight: var(--fw-semibold);
+}
+
+p {
+  font-size: var(--fs-body);
+}
+
+small {
+  font-size: var(--fs-small);
+  color: var(--clr-muted);
+}
+
+/* =======================================================
+   PAGE LAYOUT
+======================================================= */
 .page {
-  width: 210mm;
-  min-height: 297mm;
-  background: white;
-  padding: 10mm;
+  width: var(--page-width);
+  min-height: var(--page-height);
+  background: var(--clr-background);
+  padding: var(--page-padding);
   box-sizing: border-box;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
-/* ----- contact-bar ----- */
-.contact-bar {
-  background: grey;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  row-gap: 10px;
-  column-gap: 20px;
+/* =======================================================
+   CONTACT INFO
+======================================================= */
+.cv-name {
+  color: var(--clr-heading);
 }
 
-.contact-item svg {
-  width: 1em;
-  height: 1em;
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--clr-text);
+}
+
+.contact-item svg,
+.contact-item i {
+  width: var(--icon-md);
+  height: var(--icon-md);
+  font-size: var(--icon-md);
+  flex-shrink: 0;
+}
+
+.contact-info {
+  background: var(--clr-card);
+  padding: 16px 20px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--clr-text);
+  font-size: var(--fs-small);
+}
+
+.contact-item i {
+  font-size: var(--fs-small);
+  text-align: center;
 }
 
 /* ===== PRINT ===== */
@@ -55,13 +222,13 @@ h1 {
 
 @media print {
   body {
-    background: white;
+    background: var(--clr-background);
     padding: 0;
   }
 
   .page {
-    width: 210mm;
-    min-height: 297mm;
+    width: var(--page-width);
+    min-height: var(--page-height);
     margin: 0;
     box-shadow: none;
     page-break-after: always;
