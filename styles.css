@@ -10,13 +10,13 @@
   /* Name */
   --fs-name: 2rem; /* 32px */
   /* Section */
-  --fs-section-title: 1rem; /* 16px */
+  --fs-section-title: 0.875rem; /* 16px */
   /* Job Title */
   --fs-job-title: 0.875rem; /* 14px */
   /* Body */
-  --fs-body: 0.875rem; /* 14px */
+  --fs-body: 0.75rem; /* 12px */
   /* Small */
-  --fs-small: 0.75rem; /* 12px */
+  --fs-small: 0.625rem; /* 10px */
 
   /* ===== FONT WEIGHT ===== */
   --fw-black: 900;
@@ -42,7 +42,7 @@
   --clr-border: #d1d5db;
   --clr-background: #ffffff;
   --clr-surface: #f3f4f6;
-  --clr-card: #f3f4f6;
+  --clr-card: #e6f2dd;
 
   /* ===== SPACING ===== */
   --space-1: 4px;
@@ -106,15 +106,15 @@ svg {
   max-width: 100%;
 }
 
-ul,
+/* ul,
 ol {
   list-style: none;
-}
+} */
 
 /* =======================================================
    TYPOGRAPHY
 ======================================================= */
-
+/* cv name */
 .cv-name {
   font-family: var(--font-heading);
   font-size: var(--fs-name);
@@ -123,9 +123,11 @@ ol {
   letter-spacing: var(--ls-wide);
   color: var(--clr-heading);
   text-transform: uppercase;
+  padding-bottom: var(--space-2);
 }
 
-.section-title {
+/* section header v1 */
+/* .section-title {
   font-family: var(--font-heading);
   font-size: var(--fs-section-title);
   font-weight: var(--fw-bold);
@@ -133,17 +135,57 @@ ol {
   letter-spacing: var(--ls-wide);
   color: var(--clr-heading);
   text-transform: uppercase;
+} */
+
+/* section header v2 */
+.section-header {
+  display: flex;
+  align-items: center;
+  padding-top: var(--space-4);
 }
 
+.section-title {
+  display: inline-block;
+  padding: 6px 14px;
+  background: var(--clr-card);
+  font-family: var(--font-heading);
+  font-size: var(--fs-section-title);
+  color: var(--clr-heading);
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+
+.section-header::after {
+  content: "";
+  flex: 1;
+  height: 1.5px;
+  background: var(--clr-card);
+}
+
+/* job title */
 .job-title {
   font-size: var(--fs-job-title);
   font-weight: var(--fw-semibold);
 }
 
+/* about me */
+.cv-about-me {
+  padding-top: var(--space-4);
+}
+
+h3 {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-black);
+  padding-top: var(--space-2);
+}
+
+/* paragraph */
 p {
   font-size: var(--fs-body);
 }
 
+/* small text */
 small {
   font-size: var(--fs-small);
   color: var(--clr-muted);
@@ -164,10 +206,6 @@ small {
 /* =======================================================
    CONTACT INFO
 ======================================================= */
-.cv-name {
-  color: var(--clr-heading);
-}
-
 .contact-item {
   display: flex;
   align-items: center;
@@ -199,18 +237,61 @@ small {
   flex-wrap: wrap;
 }
 
+.social-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
 .contact-item {
   display: flex;
   align-items: center;
   gap: 8px;
   text-decoration: none;
   color: var(--clr-text);
-  font-size: var(--fs-small);
+  font-size: var(--fs-body);
 }
 
 .contact-item i {
-  font-size: var(--fs-small);
+  font-size: var(--fs-body);
   text-align: center;
+}
+
+/* =======================================================
+   EDUCATION
+======================================================= */
+.education .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--fs-small);
+  color: var(--clr-muted);
+  padding-top: var(--space-1);
+}
+
+.education p {
+  padding-top: var(--space-1);
+}
+
+/* =======================================================
+   EXPERIENCE
+======================================================= */
+.experience .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--fs-small);
+  color: var(--clr-muted);
+  padding-top: var(--space-1);
+}
+
+.experience p {
+  padding-top: var(--space-1);
+}
+
+.experience .job-description-list {
+  padding-top: var(--space-1);
+  padding-left: var(--space-4);
 }
 
 /* ===== PRINT ===== */
