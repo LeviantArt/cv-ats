@@ -93,6 +93,8 @@ body {
   display: flex;
   justify-content: center;
   background: var(--clr-surface);
+  flex-direction: column; /* Tambahkan ini */
+  align-items: center; /* Supaya halaman tetap di tengah */
 }
 
 a {
@@ -199,6 +201,7 @@ small {
   min-height: var(--page-height);
   background: var(--clr-background);
   padding: var(--page-padding);
+  margin: 2.5mm 0;
   box-sizing: border-box;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
@@ -211,6 +214,8 @@ small {
   align-items: center;
   gap: var(--space-2);
   color: var(--clr-text);
+  text-decoration: none;
+  font-size: var(--fs-body);
 }
 
 .contact-item svg,
@@ -237,34 +242,9 @@ small {
   flex-wrap: wrap;
 }
 
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  color: var(--clr-text);
-  font-size: var(--fs-body);
-}
-
 .contact-item i {
   font-size: var(--fs-body);
   text-align: center;
-}
-
-/* =======================================================
-   EDUCATION
-======================================================= */
-.education .row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: var(--fs-small);
-  color: var(--clr-muted);
-  padding-top: var(--space-1);
-}
-
-.education p {
-  padding-top: var(--space-1);
 }
 
 /* =======================================================
@@ -289,6 +269,22 @@ small {
 }
 
 /* =======================================================
+   EDUCATION
+======================================================= */
+.education .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--fs-small);
+  color: var(--clr-muted);
+  padding-top: var(--space-1);
+}
+
+.education p {
+  padding-top: var(--space-1);
+}
+
+/* =======================================================
    SKILLS
 ======================================================= */
 .skills-list {
@@ -306,6 +302,19 @@ small {
 .skills-list dd {
   margin: 0;
   color: var(--clr-text);
+}
+
+/* =======================================================
+   PROJECTS
+======================================================= */
+.project-tech {
+  font-size: var(--fs-body);
+  color: var(--clr-muted);
+  padding-top: var(--space-1);
+}
+
+.project-tech strong {
+  color: var(--clr-heading);
 }
 
 /* ===== PRINT ===== */
