@@ -254,26 +254,6 @@ small {
 }
 
 /* =======================================================
-   PEERSONAL INFORMATION
-======================================================= */
-
-.personal-information ul {
-  list-style: none;
-  padding: 0;
-  margin: 12px 0 0;
-}
-
-.personal-information li {
-  display: flex;
-  align-items: baseline;
-  padding: 5px 0;
-}
-
-.personal-information li h3 {
-  width: 130px;
-}
-
-/* =======================================================
    EXPERIENCE
 ======================================================= */
 .experience .row {
